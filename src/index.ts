@@ -19,7 +19,7 @@ function listarTarefas(){
     let posicao = tarefas.indexOf(item);
 
     linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`)
-    linkElement.setAttribute("style", "margin-left: 10px")
+    linkElement.setAttribute("class", "delete");
     
     let linkText = document.createTextNode("Excluir");
     linkElement.appendChild(linkText);

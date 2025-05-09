@@ -12,8 +12,8 @@ function listarTarefas() {
         var linkElement = document.createElement("a");
         linkElement.setAttribute("href", "#");
         var posicao = tarefas.indexOf(item);
-        linkElement.setAttribute("onclick", "deletarTarefa(" + posicao + ")");
-        linkElement.setAttribute("style", "margin-left: 10px");
+        linkElement.setAttribute("onclick", "deletarTarefa(".concat(posicao, ")"));
+        linkElement.setAttribute("class", "delete");
         var linkText = document.createTextNode("Excluir");
         linkElement.appendChild(linkText);
         todoElement.appendChild(tarefaText);
