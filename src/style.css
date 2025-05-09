@@ -9,17 +9,61 @@ body {
     font-family: montserrat, sans-serif;
 }
 
-body h1 {
-    text-align: center;
+.menu {
+    height: 50px;
+    background-color: #545E75;
+    margin: 0;
+    padding: 0;
+}
+
+.menu h3 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: pacifico, cursive;
+    font-size: 20px;
+    margin-left: 42px;
+    padding-top: 7px;
+}
+
+.botao {
+    position: fixed;
+    font-weight: 700;
+    margin-top: 5px;
+    background-color: white;
     color: #545E75;
+    border: 2px solid;  
+    border-color: #545E75;
+    padding: 10px 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-decoration: none;
+    border-radius: 5px;
     font-family: montserrat, sans-serif;
-    font-size: 60px;
-    margin-top: 180px;
-}	
+    display: inline-block;
+    right: 20px;
+}
+
+.botao:hover {
+    background-color: #545E75;
+    color: white;
+    border-color: white;
+    font-size: 11px;
+    transition: 0.4s;
+}
 
 .main {
     text-align: center;
 }
+
+.main h1 {
+    text-align: center;
+    color: #545E75;
+    font-family: montserrat, sans-serif;
+    font-size: 60px;
+    margin-top: 100px;
+}	
 
 .main ul {
     list-style-type: none;
@@ -27,10 +71,12 @@ body h1 {
 }
 .main li {
     display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    background-color: #F2D0A4;
-    border-radius: 5px;
+    margin-top: 50px;
+    padding: 5px 30px 5px 30px; 
+    background-color: #ddd;
+    color: #545E75;
+    font-weight: 600;
+    border: 2px solid #545E75;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,59 +84,96 @@ body h1 {
     background-color: #545E75;
     border-radius: 3px;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     font-family: montserrat, sans-serif;    
-
 } 
+
+.barra::placeholder {
+    color: white;
+    opacity: 0.4;
+    font-size: 18px;
+    font-family: montserrat, sans-serif;    
+}
 
 button {
     margin-top: 20px;
-        background-color: #545E75;
-        color: white;
-        border: 2px solid;
-        border-color: white;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.4s;
-        text-decoration: none;
-        border-radius: 5px;
-        font-family: montserrat, sans-serif;
-    }
+    background-color: #545E75;
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: montserrat, sans-serif;
+}
     
     
-    button:hover {
-        background-color: #545E75;
-        color: white;
-        border-color: white;
-        font-size: 18px;
-        transition: 0.4s;
-    }
-    
-
-
-.delete {
+button:hover {
+    background-color: #545E75;
+    color: white;
+    border-color: white;
+    font-size: 18px;
+    transition: 0.4s;
 }
 
-/* Página Tabela */
+/* --------------------- TABELA ----------------------- */
+
+.maint h1{
+    text-align: center;
+    color: #545E75;
+    font-family: montserrat, sans-serif;
+    font-size: 40px;
+    margin-top: 30px;
+}
 
 table {
     width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
     text-align: left;
+    font-family: montserrat, sans-serif;
 }
 
 table th, table td {
     padding: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
     border: 1px solid #ddd;
+    text-align: center;
+    transition:0.3s;
 }
 
 table th {
     background-color: #545E75;
     color: white;
+    font-size: 18px;
 }
 
 table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table button {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+        transition: 0.4s;
+}
+
+table button:hover {
+    background-color: #FF4C4C;
+}
+
+

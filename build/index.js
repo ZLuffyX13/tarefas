@@ -5,21 +5,22 @@ var buttonElement = document.querySelector("#app button");
 var listaSalva = localStorage.getItem("@listagem_tarefas");
 var tarefas = listaSalva !== null && JSON.parse(listaSalva) || [];
 function listarTarefas() {
-    listElement.innerHTML = "";
-    tarefas.map(function (item) {
+    listElement.innerHTML = ""; // Limpa a lista
+    if (tarefas.length > 0) {
+        // Exibe apenas o último item
+        var ultimoItem = tarefas[tarefas.length - 1];
         var todoElement = document.createElement("li");
-        var tarefaText = document.createTextNode(item);
+        var tarefaText = document.createTextNode(ultimoItem);
         var linkElement = document.createElement("a");
         linkElement.setAttribute("href", "#");
-        var posicao = tarefas.indexOf(item);
-        linkElement.setAttribute("onclick", "deletarTarefa(".concat(posicao, ")"));
+        // Configura o botão para excluir o último item
+        linkElement.setAttribute("onclick", "deletarTarefa(".concat(tarefas.length - 1, ")"));
         linkElement.setAttribute("class", "delete");
         var linkText = document.createTextNode("Excluir");
         linkElement.appendChild(linkText);
         todoElement.appendChild(tarefaText);
-        todoElement.appendChild(linkElement);
         listElement.appendChild(todoElement);
-    });
+    }
 }
 listarTarefas();
 function adicionarTarefa() {

@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tabela de Tarefas</title>
+  
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Montserrat:wght@100..900&family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <h1>Tabela de Tarefas</h1>
-  <div class="main">
-    <table border="1" id="task-table">
-      <thead>
-        <tr>
-          <th>Tarefa</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- As tarefas serão carregadas aqui -->
-      </tbody>
-    </table>
+
+  <div class="menu">
+
+    <a href="index.html" class="botao">Home</a>
+
   </div>
 
-  <script>
-    // Carregar tarefas do localStorage
-    const listaSalva = localStorage.getItem("@listagem_tarefas");
-    const tarefas = listaSalva ? JSON.parse(listaSalva) : [];
+  <div class="maint">
 
-    const tableBody = document.querySelector("#task-table tbody");
+    <h1>Tabela de Tarefas</h1>
 
-    // Adicionar tarefas na tabela
-    tarefas.forEach(item => {
-      const row = document.createElement("tr");
-      const cell = document.createElement("td");
-      cell.textContent = item;
-      row.appendChild(cell);
-      tableBody.appendChild(row);
-    });
-  </script>
+        <table border="1" id="task-table">
+
+            <thead>
+
+                <tr>
+                <th>Tarefa</th>
+                <th>Ações</th>
+                </tr>
+
+            </thead>
+
+          <tbody>
+                <!-- As tarefas serão carregadas aqui -->
+          </tbody>
+
+        </table>
+
+
+  </div>
+
+<script src="../build/tabela.js"></script>
+
 </body>
 </html>

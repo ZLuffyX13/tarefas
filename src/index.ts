@@ -6,32 +6,29 @@ let buttonElement = document.querySelector("#app button") as HTMLElement;
 let listaSalva: (string | null) = localStorage.getItem("@listagem_tarefas");
 let tarefas: string[] = listaSalva !== null && JSON.parse(listaSalva) || [];
 
-function listarTarefas(){
-  listElement.innerHTML = "";
+function listarTarefas() {
+  listElement.innerHTML = ""; // Limpa a lista
 
-  tarefas.map( item => {
-    let todoElement = document.createElement("li");
-    let tarefaText = document.createTextNode(item);
+  if (tarefas.length > 0) {
+    // Exibe apenas o último item
+    const ultimoItem = tarefas[tarefas.length - 1];
+    const todoElement = document.createElement("li");
+    const tarefaText = document.createTextNode(ultimoItem);
 
-    let linkElement = document.createElement("a");
+    const linkElement = document.createElement("a");
     linkElement.setAttribute("href", "#");
 
-    let posicao = tarefas.indexOf(item);
-
-    linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`)
+    // Configura o botão para excluir o último item
+    linkElement.setAttribute("onclick", `deletarTarefa(${tarefas.length - 1})`);
     linkElement.setAttribute("class", "delete");
-    
-    let linkText = document.createTextNode("Excluir");
+
+    const linkText = document.createTextNode("Excluir");
     linkElement.appendChild(linkText);
 
     todoElement.appendChild(tarefaText);
-    todoElement.appendChild(linkElement);
     listElement.appendChild(todoElement);
-
-  })
-
-} 
-
+  }
+}
 
 listarTarefas();
 
@@ -65,3 +62,5 @@ function deletarTarefa(posicao: number){
 function salvarDados(){
   localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas))
 }
+
+
