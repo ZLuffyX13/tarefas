@@ -1,4 +1,3 @@
-
 let listElement = document.querySelector("#app ul") as HTMLUListElement;
 let inputElement = document.querySelector("#app input") as HTMLInputElement;
 let buttonElement = document.querySelector("#app button") as HTMLElement;
@@ -62,5 +61,7 @@ function deletarTarefa(posicao: number){
 function salvarDados(){
   localStorage.setItem("@listagem_tarefas", JSON.stringify(tarefas))
 }
+
+
 
 
